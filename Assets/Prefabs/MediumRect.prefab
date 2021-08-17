@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2536816784656222416}
   - component: {fileID: 2767629627028246554}
   - component: {fileID: 8342342269907913464}
+  - component: {fileID: 9124028254939910755}
   m_Layer: 0
   m_Name: MediumRect
   m_TagString: Rectangle
@@ -91,5 +92,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.92250645, z: 1}
+  m_Center: {x: 0, y: -0.03874852, z: 0}
+--- !u!65 &9124028254939910755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677158603984967159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.12097054, z: 1}
+  m_Center: {x: 0, y: 0.4881037, z: 0}

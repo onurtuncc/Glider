@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 public class GenerateMap : MonoBehaviour
 {
     //Cylinder and rect prism prefabs
@@ -37,5 +38,9 @@ public class GenerateMap : MonoBehaviour
             startPoint += Vector3.forward * distanceBetweenTiles;
         }
         
+    }
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

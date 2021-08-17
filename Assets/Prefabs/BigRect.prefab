@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4283366102445438426}
   - component: {fileID: 2199909531523223280}
   - component: {fileID: 8716529750082898326}
+  - component: {fileID: 8369511238309520519}
   m_Layer: 0
   m_Name: BigRect
   m_TagString: Rectangle
@@ -91,5 +92,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &8369511238309520519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895049649703612051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.10636496, z: 1}
+  m_Center: {x: 0, y: 0.49392787, z: 0}

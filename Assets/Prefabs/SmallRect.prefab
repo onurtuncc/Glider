@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6552187397052839530}
   - component: {fileID: 7440839928025639658}
   - component: {fileID: 7934086940078793414}
+  - component: {fileID: 3630708597323095932}
   m_Layer: 0
   m_Name: SmallRect
   m_TagString: Rectangle
@@ -91,5 +92,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.92061245, z: 1}
+  m_Center: {x: 0, y: -0.039694455, z: 0}
+--- !u!65 &3630708597323095932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966843860324306386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.13298464, z: 1}
+  m_Center: {x: 0, y: 0.4957485, z: 0}

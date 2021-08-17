@@ -2,6 +2,7 @@
 
 public class ThrowControl : MonoBehaviour
 {
+    #region Variables
     private GameObject rocketMan;
     private Animator stickAnimator;
     CameraController camController;
@@ -16,10 +17,10 @@ public class ThrowControl : MonoBehaviour
     [SerializeField]private float lerpSpeed=0.05f;
     private bool isClicked = false;
     private bool isReleased = false;
-    
+    #endregion
     void Start()
     {
-        
+        //Initializing variables
         camController = Camera.main.GetComponent<CameraController>();
         rocketMan = GameObject.FindGameObjectWithTag("Player");
         playerController = rocketMan.GetComponent<PlayerController>();
