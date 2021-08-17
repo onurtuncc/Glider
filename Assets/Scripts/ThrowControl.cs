@@ -4,6 +4,8 @@ public class ThrowControl : MonoBehaviour
 {
     private GameObject rocketMan;
     private Animator stickAnimator;
+    CameraController camController;
+    PlayerController playerController;
     float  xStartPosition;
     float force = 0f;
     private float appliedForce = 0f;
@@ -16,7 +18,10 @@ public class ThrowControl : MonoBehaviour
     
     void Start()
     {
+        
+        camController = Camera.main.GetComponent<CameraController>();
         rocketMan = GameObject.FindGameObjectWithTag("Player");
+        playerController = rocketMan.GetComponent<PlayerController>();
         stickAnimator = GetComponent<Animator>();
     }
 
@@ -58,15 +63,20 @@ public class ThrowControl : MonoBehaviour
             stickAnimator.SetFloat("bendForce", force);
             if (force <= 0f)
             {
-                stickAnimator.SetTrigger("releaseTrigger");
-                rocketMan.transform.parent = null;
-                rocketMan.GetComponent<Rigidbody>().isKinematic = false;
-                rocketMan.GetComponent<Rigidbody>().AddForce(new Vector3(0, upForce, appliedForce * forceMultiplier));
+                FlyPhase();
                 isReleased = false;
-                Destroy(this);
-                
             }
             
         }
+    }
+    void FlyPhase()
+    {
+        stickAnimator.SetTrigger("releaseTrigger");
+        rocketMan.transform.parent = null;
+        rocketMan.GetComponent<Rigidbody>().isKinematic = false;
+        rocketMan.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, appliedForce * forceMultiplier));
+        camController.IsFlying = true;
+        playerController.enabled = true;
+        Destroy(this);
     }
 }
