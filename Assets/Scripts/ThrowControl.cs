@@ -6,6 +6,7 @@ public class ThrowControl : MonoBehaviour
     private Animator stickAnimator;
     CameraController camController;
     PlayerController playerController;
+    TrailRenderer playerTrail;
     float  xStartPosition;
     float force = 0f;
     private float appliedForce = 0f;
@@ -22,6 +23,7 @@ public class ThrowControl : MonoBehaviour
         camController = Camera.main.GetComponent<CameraController>();
         rocketMan = GameObject.FindGameObjectWithTag("Player");
         playerController = rocketMan.GetComponent<PlayerController>();
+        playerTrail = rocketMan.GetComponent<TrailRenderer>();
         stickAnimator = GetComponent<Animator>();
     }
 
@@ -77,6 +79,7 @@ public class ThrowControl : MonoBehaviour
         rocketMan.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, appliedForce * forceMultiplier));
         camController.IsFlying = true;
         playerController.enabled = true;
+        playerTrail.enabled = true;
         Destroy(this);
     }
 }
