@@ -3,11 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     #region Variables
-    /*Mobile controls
-    private Touch touch;
-    private float deadZone = 2f;
-    private float speedModifier = 0.005f;
-    */
+    
     public enum FlyState { Flying,Gliding};
     private FlyState flyState;
 
@@ -55,45 +51,12 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        #region Mobil Kontroller
-        /*
-        if (Input.touchCount > 0)
-        {
-            if (!isChanged)
-            {
-                flyState = ReverseState(flyState);
-                isChanged = true;
-            }
-            
-            touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Moved)
-            {
-                if (touch.deltaPosition.magnitude < deadZone) return;
-                transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedModifier,
-                    transform.position.y, transform.position.z);
-            }
-            
-
-        }
-        else
-        {
-            if (isChanged)
-            {
-                flyState = ReverseState(flyState);
-                isChanged = false;
-            }
-        }
-        */
         
-        #endregion
         if (flyState==FlyState.Gliding)
         {
             //Changing rotation to the when moving horizontal
-            //For mobile
-            //lerpZ = -(transform.position.x - touch.position.normalized.x)*5;
-
-            //For Pc
+            
+            
             lerpZ = transform.position.x - Input.mousePosition.x;
 
             //Limiting our rotation
@@ -106,7 +69,7 @@ public class PlayerController : MonoBehaviour
                 lerpZ = -lerpZLimit;
             }
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.x, transform.rotation.y, lerpZ), 0.1f);
-            //For PC
+            
             transform.position = new Vector3(transform.position.x + Input.mousePosition.normalized.x * horizontalSpeed, transform.position.y,
               transform.position.z);
             
