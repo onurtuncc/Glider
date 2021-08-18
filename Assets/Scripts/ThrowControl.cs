@@ -4,6 +4,7 @@ public class ThrowControl : MonoBehaviour
 {
     #region Variables
     private GameObject rocketMan;
+
     private Animator stickAnimator;
     CameraController camController;
     PlayerController playerController;
@@ -21,6 +22,7 @@ public class ThrowControl : MonoBehaviour
     void Start()
     {
         //Initializing variables
+
         camController = Camera.main.GetComponent<CameraController>();
         rocketMan = GameObject.FindGameObjectWithTag("Player");
         playerController = rocketMan.GetComponent<PlayerController>();
@@ -81,6 +83,7 @@ public class ThrowControl : MonoBehaviour
         camController.IsFlying = true;
         playerController.enabled = true;
         playerTrail.enabled = true;
+
         Destroy(this);
     }
 }
